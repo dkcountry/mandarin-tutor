@@ -48,6 +48,49 @@ body {
 .header h1 { margin: 0; font-size: 26px; }
 .tagline { margin: 2px 0 0; color: var(--muted); font-size: 14px; font-style: italic; }
 
+.header-controls {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  margin-top: 18px;
+  flex-wrap: wrap;
+}
+.header-controls .tabs { flex: 1; margin-top: 0; }
+
+.voice-picker {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 6px 8px;
+}
+.voice-picker-label { color: var(--muted); font-size: 13px; }
+.voice-picker select {
+  max-width: 220px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 6px 8px;
+  background: #fffdf9;
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+.voice-preview {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  color: var(--accent);
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: all 0.15s ease;
+}
+.voice-preview:hover { border-color: var(--accent); background: var(--accent-soft); }
+
 .tabs { display: flex; gap: 8px; margin-top: 18px; }
 .tab {
   flex: 1;

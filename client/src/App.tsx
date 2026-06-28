@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ConversationMode } from "./components/ConversationMode";
 import { ListeningMode } from "./components/ListeningMode";
 import { VocabMode } from "./components/VocabMode";
+import { VoicePicker } from "./components/VoicePicker";
 
 type Mode = "conversation" | "listening" | "vocab";
 
@@ -24,18 +25,21 @@ export default function App() {
             <p className="tagline">Level up your speaking &amp; listening · 4th grade → high school</p>
           </div>
         </div>
-        <nav className="tabs">
-          {TABS.map((t) => (
-            <button
-              key={t.id}
-              className={`tab ${mode === t.id ? "active" : ""}`}
-              onClick={() => setMode(t.id)}
-            >
-              <span className="tab-cn">{t.label}</span>
-              <span className="tab-en">{t.sub}</span>
-            </button>
-          ))}
-        </nav>
+        <div className="header-controls">
+          <nav className="tabs">
+            {TABS.map((t) => (
+              <button
+                key={t.id}
+                className={`tab ${mode === t.id ? "active" : ""}`}
+                onClick={() => setMode(t.id)}
+              >
+                <span className="tab-cn">{t.label}</span>
+                <span className="tab-en">{t.sub}</span>
+              </button>
+            ))}
+          </nav>
+          <VoicePicker />
+        </div>
       </header>
 
       <main className="main">
